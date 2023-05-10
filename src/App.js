@@ -1,10 +1,11 @@
-import Header from "./components/header";
-import Main from "./components/main";
+import AppHeader from "./components/DependenceComponent/appHeader";
+import "../src/styles/css/main.css";
+import Main from "./components/primaryComponents/Main.jsx";
 function App() {
   return (
     <>
-      <Header>TO DO LIST</Header>
-      <Main>Hello form app main 2</Main>
+      <AppHeader>TO DO LIST</AppHeader>
+      <Main />
     </>
   );
 }
