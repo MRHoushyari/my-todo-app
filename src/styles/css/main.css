@@ -1,53 +1,108 @@
-Main {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
-  max-width: 70%;
+/*                                    Master Componwnt */
+/***************************************************************************************/
+.contentHeader {
+  max-width: 50%;
   margin: 0 auto;
-}
-ul,
-li {
-  list-style-type: none;
-}
-.buttons {
   display: flex;
   justify-content: space-between;
   font-size: 25px;
 }
-.buttons button {
+
+.content {
+  margin: 0 auto;
+  max-width: 50%;
+  padding: 0.3em;
+  border-radius: 5px;
+  background-color: #ecedf6;
+  margin-top: 25px;
+}
+
+/*                                     Nested Component */
+/***************************************************************************************/
+.content span {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(50, 50, 50, 1);
+  font-size: large;
+}
+
+.modal form {
+  background-color: #dadadb;
+  padding: 15px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.modal .title {
+  background-color: white;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.modal .status {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .close {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+/*                                     Dependency Component */
+/***************************************************************************************/
+.regularButton {
   color: white;
   background-color: #646ff0;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1.3rem;
   font-weight: 500;
   height: auto;
   padding: 0.8rem 2rem;
 }
-.buttons select {
+
+.CloseButton {
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  height: auto;
+  padding: 0.8rem 2rem;
+}
+
+.dropButton {
   color: #585858;
   padding: 0.8rem 2rem;
-  border-radius: 6px;
+  border-radius: 5px;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
   height: auto;
   background-color: #cccdde;
 }
-.items {
-    padding: 1.5em;
-  border-radius: 25px;
-  background-color: #ecedf6;
-  margin-top: 25px;
-}
-.items li {
-  display: flex;
-  justify-content: space-between;
-}
-.items span{
-    display: flex;
-    justify-content: center;
-    font-size: large;
+
+ul {
+  padding-inline-start: 0px;
 }
