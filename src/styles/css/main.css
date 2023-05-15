@@ -1,4 +1,4 @@
-/*                                    Master Componwnt */
+/*                                    Master Component */
 /***************************************************************************************/
 .contentHeader {
   max-width: 50%;
@@ -19,11 +19,25 @@
 
 /*                                     Nested Component */
 /***************************************************************************************/
-.content span {
+/* .left{
+  border: 4px solid red;
+}
+.right
+{ border: 4px solid blue} */
+.content{
+  border: yellow 4px solid;
+}
+.notodo{
   display: flex;
   justify-content: center;
   font-size: large;
+  /* background-color: #585858; */
 }
+/* .content {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+} */
 
 .modal {
   position: fixed;
@@ -88,22 +102,24 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
 li div input {
   margin: 10px;
 }
+
 input {
   background-color: black;
   width: 20px;
   height: 20px;
   /* #f8f8ff; */
 }
+
 svg {
   border-radius: 4px;
   padding: 5px;
   margin: 5px;
   background-color: #e9e8e8;
 }
-
 
 .regularButton {
   color: white;

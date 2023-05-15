@@ -1,21 +1,29 @@
 import React from "react";
-// import { useState } from "react";
-import Item from "../DependenceComponent/item";
-// import { ItemsContext } from "../Context/itemsContext";
-// import { useContext } from "react";
-export default function Content({ items, setItems }) {
-  // const context = useContext(ItemsContext);
-  // const [items, setItems] = useState([]);
+import Task from "../DependenceComponent/Task";
+export default function Content({
+  tasks,
+  filter,
+  handleDeleteTask,
+  handleTaskIsComplete,
+}) {
   return (
     <div className="content">
-      {items.length ? (
+      {tasks.length ? (
         <ul>
-          {items.map((item) => {
-            return <Item>{item}</Item>;
+          {tasks.map((i, index) => {
+            return (
+              <Task
+                isCpmplete={i.isCpmplete}
+                handleTaskIsComplete={handleTaskIsComplete}
+                index={i.index}
+              >
+                {i.title}
+              </Task>
+            );
           })}
         </ul>
       ) : (
-        <span>No Todo</span>
+        <span className="notodo">There is No Task To do!</span>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import AppHeader from "./components/DependenceComponent/appHeader";
 import "../src/styles/css/main.css";
-import Main from "./components/primaryComponents/Main.jsx";
+// import Main from "./components/primaryComponents/MainFC.jsx";
+import Main from "./components/primaryComponents/MainCC.jsx";
 function App() {
   return (
     <>

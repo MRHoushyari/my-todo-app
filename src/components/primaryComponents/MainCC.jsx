@@ -1,27 +1,46 @@
-import AddItemForm from "../nestedComponents/addItemForm";
+import AddTaskForm from "../nestedComponents/addTaskForm";
 import Content from "../nestedComponents/content";
 import ContentHeader from "../nestedComponents/contentHeader";
 import React, { Component } from "react";
 
 class Main extends Component {
-  //   constructor(props)
-  //     super(props);
   state = {
     show: false,
-    items: [],
+    tasks: [],
+    filter: "all",
   };
-
   render() {
     return (
       <>
-        <ContentHeader show={this.state.show} />
-        <AddItemForm items={this.state.items} show={this.state.show} />
-        <Content items={this.items} />;
+        <ContentHeader show={this.state.show} handleShow={this.handleShow} />
+        <AddTaskForm
+          tasks={this.state.tasks}
+          show={this.state.show}
+          handleNewTask={this.handleNewTask}
+          handleShow={this.handleShow}
+        />
+        <Content
+          tasks={this.state.tasks}
+          filter={this.state.filter}
+          handleDeleteTask={this.handleDeleteTask}
+        />
       </>
     );
   }
-  handleShow = (state) => {
-    this.setState({show:state})
+  handleShow = (show) => {
+    this.setState({ show });
+  };
+  handleNewTask = (t) => {
+    const newTasks = this.state.tasks.slice();
+    newTasks.push(t);
+    this.setState({ tasks: newTasks });
+  };
+  handleDeleteTask = () => {};
+  // handleTaskIsComplete = (isComplete) => {
+  //   this.setState({ isComplete });
+  // };
+  handleFilter = (filter) => {
+    this.setState({ filter });
   };
 }
 
