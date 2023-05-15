@@ -23,6 +23,8 @@ class Main extends Component {
           tasks={this.state.tasks}
           filter={this.state.filter}
           handleDeleteTask={this.handleDeleteTask}
+          handlesStatusTask={this.handlesStatusTask}
+          handleIsComplete={this.handleIsComplete}
         />
       </>
     );
@@ -35,12 +37,17 @@ class Main extends Component {
     newTasks.push(t);
     this.setState({ tasks: newTasks });
   };
-  handleDeleteTask = () => {};
+  // handleDeleteTask = () => {};
   // handleTaskIsComplete = (isComplete) => {
   //   this.setState({ isComplete });
   // };
   handleFilter = (filter) => {
     this.setState({ filter });
+  };
+  handleIsComplete = (taskStatus, index) => {
+    const newTasks = this.state.tasks.slice();
+    newTasks[index].isComplete = taskStatus;
+    this.setState({ tasks: newTasks });
   };
 }
 

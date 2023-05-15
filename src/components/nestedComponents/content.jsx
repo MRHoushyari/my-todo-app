@@ -4,7 +4,7 @@ export default function Content({
   tasks,
   filter,
   handleDeleteTask,
-  handleTaskIsComplete,
+  handleIsComplete
 }) {
   return (
     <div className="content">
@@ -12,11 +12,7 @@ export default function Content({
         <ul>
           {tasks.map((i, index) => {
             return (
-              <Task
-                isCpmplete={i.isCpmplete}
-                handleTaskIsComplete={handleTaskIsComplete}
-                index={i.index}
-              >
+              <Task handleIsComplete={handleIsComplete} index={index} isComplete={tasks[index].isComplete}>
                 {i.title}
               </Task>
             );
