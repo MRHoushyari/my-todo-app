@@ -8,6 +8,7 @@ export default function AddTaskForm({
 }) {
   const [title, setTitle] = useState();
   const [isComplete, setIsComplete] = useState("Incomplete");
+  // console.log(isComplete);
   return (
     <>
       {show && (
@@ -21,6 +22,7 @@ export default function AddTaskForm({
                 type="text"
                 className="title"
                 onChange={(e) => {
+                  console.log(isComplete);
                   setTitle(e.target.value);
                 }}
               />
@@ -30,7 +32,7 @@ export default function AddTaskForm({
               {/*                                                     DropButton */}
               <select
                 className="dropButton"
-                onClick={(e) => {
+                onChange={(e) => {
                   setIsComplete(e.target.value);
                 }}
               >
