@@ -45,10 +45,12 @@ class Main extends Component {
     newTasks.push(t);
     this.setState({ tasks: newTasks });
   };
-  // handleDeleteTask = () => {};
-  // handleTaskIsComplete = (isComplete) => {
-  //   this.setState({ isComplete });
-  // };
+  handleDeleteTask = (index) => {
+    const newTasks = [...this.state.tasks];
+    newTasks.splice(index, 1);
+    this.setState({ tasks: newTasks });
+  };
+
   handleFilter = (filter) => {
     this.setState({ filter });
   };

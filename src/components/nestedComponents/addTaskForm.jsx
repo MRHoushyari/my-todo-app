@@ -1,10 +1,6 @@
 import React from "react";
 import { useState } from "react";
-export default function AddTaskForm({
-  show,
-  handleShow,
-  handleNewTask,
-}) {
+export default function AddTaskForm({ show, handleShow, handleNewTask }) {
   const [title, setTitle] = useState();
   const [isComplete, setIsComplete] = useState("Incomplete");
   return (

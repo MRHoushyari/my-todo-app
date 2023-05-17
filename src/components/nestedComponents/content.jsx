@@ -27,6 +27,7 @@ export default function Content({
                   handleIsComplete={handleIsComplete}
                   index={t.index}
                   isComplete={t.isComplete}
+                  handleDeleteTask={handleDeleteTask}
                 >
                   {t.title}
                 </Task>
