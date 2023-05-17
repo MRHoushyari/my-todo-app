@@ -16,10 +16,8 @@ export default function Task({
             defaultChecked={isComplete === "Complete" ? true : false}
             onClick={() => {
               if (isComplete === "Complete") {
-                console.log(isComplete);
                 handleIsComplete("Incomplete", index);
               } else {
-                console.log(isComplete);
                 handleIsComplete("Complete", index);
               }
             }}

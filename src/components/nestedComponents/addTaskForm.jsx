@@ -1,14 +1,12 @@
 import React from "react";
 import { useState } from "react";
 export default function AddTaskForm({
-  tasks,
   show,
   handleShow,
   handleNewTask,
 }) {
   const [title, setTitle] = useState();
   const [isComplete, setIsComplete] = useState("Incomplete");
-  // console.log(isComplete);
   return (
     <>
       {show && (
@@ -22,7 +20,6 @@ export default function AddTaskForm({
                 type="text"
                 className="title"
                 onChange={(e) => {
-                  console.log(isComplete);
                   setTitle(e.target.value);
                 }}
               />
@@ -48,7 +45,6 @@ export default function AddTaskForm({
                 onClick={() => {
                   const newTasks = { title, isComplete };
                   handleNewTask(newTasks);
-                  console.log(tasks);
                 }}
               >
                 Add Task

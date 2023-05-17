@@ -1,6 +1,11 @@
 import React from "react";
 import AddItemForm from "./addTaskForm";
-export default function ContentHeader({show, handleShow}) {
+export default function ContentHeader({
+  show,
+  handleShow,
+  filter,
+  handleFilter,
+}) {
   return (
     <>
       <div className="contentHeader">
@@ -12,7 +17,12 @@ export default function ContentHeader({show, handleShow}) {
         >
           Add Task
         </button>
-        <select className="dropButton">
+        <select
+          className="dropButton"
+          onChange={(e) => {
+            handleFilter(e.target.value);
+          }}
+        >
           <option value="All">All</option>
           <option value="Incomplete">Incomplete</option>
           <option value="Complete">Complete</option>

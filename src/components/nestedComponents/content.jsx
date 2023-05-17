@@ -4,19 +4,34 @@ export default function Content({
   tasks,
   filter,
   handleDeleteTask,
-  handleIsComplete
+  handleIsComplete,
 }) {
+  const indexedTasksArray = tasks.map((t, index) => {
+    return { title: t.title, isComplete: t.isComplete, index: index };
+  });
   return (
     <div className="content">
       {tasks.length ? (
         <ul>
-          {tasks.map((i, index) => {
-            return (
-              <Task handleIsComplete={handleIsComplete} index={index} isComplete={tasks[index].isComplete}>
-                {i.title}
-              </Task>
-            );
-          })}
+          {indexedTasksArray
+            .filter((t) => {
+              if (filter === "All") {
+                return t;
+              } else if (t.isComplete === filter) {
+                return t;
+              }
+            })
+            .map((t) => {
+              return (
+                <Task
+                  handleIsComplete={handleIsComplete}
+                  index={t.index}
+                  isComplete={t.isComplete}
+                >
+                  {t.title}
+                </Task>
+              );
+            })}
         </ul>
       ) : (
         <span className="notodo">There is No Task To do!</span>

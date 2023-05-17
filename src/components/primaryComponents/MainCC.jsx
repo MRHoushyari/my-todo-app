@@ -7,20 +7,28 @@ class Main extends Component {
   state = {
     show: false,
     tasks: [],
-    filter: "all",
+    filter: "All",
+    completeTasks: [],
+    incompleteTasks: [],
   };
   render() {
     return (
       <>
-        <ContentHeader show={this.state.show} handleShow={this.handleShow} />
+        <ContentHeader
+          show={this.state.show}
+          handleShow={this.handleShow}
+          handleFilter={this.handleFilter}
+        />
         <AddTaskForm
           tasks={this.state.tasks}
           show={this.state.show}
           handleNewTask={this.handleNewTask}
           handleShow={this.handleShow}
+          filter={this.state.filter}
         />
         <Content
           tasks={this.state.tasks}
+          // filteredTasksArray={this.filteredTasksArray}
           filter={this.state.filter}
           handleDeleteTask={this.handleDeleteTask}
           handlesStatusTask={this.handlesStatusTask}
