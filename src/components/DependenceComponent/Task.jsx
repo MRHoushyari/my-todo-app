@@ -5,6 +5,8 @@ export default function Task({
   index,
   handleIsComplete,
   handleDeleteTask,
+  handleShowEditForm,
+  handleEditTaskIndex,
 }) {
   return (
     <li>
@@ -57,7 +59,8 @@ export default function Task({
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
           onClick={() => {
-            console.log("Edit");
+            handleEditTaskIndex(index);
+            handleShowEditForm(true);
           }}
         >
           <path fill="none" d="M0 0h24v24H0z"></path>

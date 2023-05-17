@@ -5,6 +5,9 @@ export default function Content({
   filter,
   handleDeleteTask,
   handleIsComplete,
+  showEditForm,
+  handleShowEditForm,
+  handleEditTaskIndex
 }) {
   const indexedTasksArray = tasks.map((t, index) => {
     return { title: t.title, isComplete: t.isComplete, index: index };
@@ -28,6 +31,9 @@ export default function Content({
                   index={t.index}
                   isComplete={t.isComplete}
                   handleDeleteTask={handleDeleteTask}
+                  showEditForm={showEditForm}
+                  handleShowEditForm={handleShowEditForm}
+                  handleEditTaskIndex={handleEditTaskIndex}
                 >
                   {t.title}
                 </Task>
