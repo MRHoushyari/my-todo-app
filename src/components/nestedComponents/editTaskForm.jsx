@@ -7,8 +7,8 @@ export default function EditTaskForm({
   tasks,
   handleUpdateTask,
 }) {
-  const [title, setTitle] = useState(tasks[editTaskIndex].title);
-  const [isComplete, setIsComplete] = useState("Incomplete");
+  const [title, setTitle] = useState("");
+  var isComplete="Incomplete";
   return (
     <>
       {showEditForm && (
@@ -19,7 +19,7 @@ export default function EditTaskForm({
               <label htmlFor="title">Title:</label>
               {/*                                                      title */}
               <input
-                value={title}
+                placeholder={tasks[editTaskIndex].title}
                 type="text"
                 className="title"
                 onChange={(e) => {
@@ -33,7 +33,7 @@ export default function EditTaskForm({
               <select
                 className="dropButton"
                 onChange={(e) => {
-                  setIsComplete(e.target.value);
+                  isComplete=e.target.value;
                 }}
               >
                 <option>Incomplete</option>
@@ -46,7 +46,12 @@ export default function EditTaskForm({
                 type="button"
                 className="regularButton"
                 onClick={() => {
-                  const updateTask = { title, isComplete, editTaskIndex };
+                  console.log(isComplete);
+                  const updateTask = {
+                    title,
+                    isComplete,
+                    index: editTaskIndex,
+                  };
                   handleUpdateTask(updateTask);
                   handleShowEditForm(false);
                 }}

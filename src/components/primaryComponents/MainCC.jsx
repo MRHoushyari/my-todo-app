@@ -63,7 +63,7 @@ class Main extends Component {
   };
 
   handleNewTask = (t) => {
-    const newTasks = this.state.tasks.slice();
+    const newTasks = [...this.state.tasks];
     newTasks.push(t);
     this.setState({ tasks: newTasks });
   };
@@ -77,7 +77,7 @@ class Main extends Component {
     this.setState({ filter });
   };
   handleIsComplete = (taskStatus, index) => {
-    const newTasks = this.state.tasks.slice();
+    const newTasks = [...this.state.tasks];
     newTasks[index].isComplete = taskStatus;
     this.setState({ tasks: newTasks });
   };

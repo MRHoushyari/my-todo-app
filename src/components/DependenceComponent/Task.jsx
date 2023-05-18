@@ -15,7 +15,7 @@ export default function Task({
           {/*                                                                Checkbox */}
           <input
             type="checkbox"
-            defaultChecked={isComplete === "Complete" ? true : false}
+            checked={isComplete === "Complete" ? true : false}
             onClick={() => {
               if (isComplete === "Complete") {
                 handleIsComplete("Incomplete", index);
