@@ -7,7 +7,7 @@ export default function EditTaskForm({
   tasks,
   handleUpdateTask,
 }) {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(tasks[editTaskIndex].title);
   const [isComplete, setIsComplete] = useState("Incomplete");
   return (
     <>
@@ -19,7 +19,7 @@ export default function EditTaskForm({
               <label htmlFor="title">Title:</label>
               {/*                                                      title */}
               <input
-                value={tasks[editTaskIndex].title}
+                value={title}
                 type="text"
                 className="title"
                 onChange={(e) => {
